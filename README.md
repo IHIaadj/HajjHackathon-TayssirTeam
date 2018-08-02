@@ -1,5 +1,7 @@
 # HajjHackathon-TayssirTeam
-Tayssir Kit is a set of innovative utilities that helps the hajj through the hajj process 
+Tayssir Kit is a set of innovative utilities that helps the pilgrim through the hajj process. 
+
+Check demo : https://ihiaadj.github.io/HajjHackathon-TayssirTeam/
 
 ## Inspiration
 2 years ago, my grandmother finally had the chance to go to hajj. Unfortunately, none of her children could go with her because of financial issues, although she needs someone to guide her because she’s illitrate in one hand and can’t talk any other language except the algerian dialect. We searched for someone who could accompany her and it was a really difficult process. We finally found an adorable person who guided my grandmother through all the hajj steps without exception. That year we discovered the power of solidarity, kindness and brotherhood in muslims communities, and my grandmother finally achieved her dream, the fifth pillar of Islam, safely. 
