@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>iLand Multipurpose Landing Page Template</title>
+<link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="iLand Multipurpose Landing Page Template">
+<meta name="keywords" content="iLand HTML Template, iLand Landing Page, Landing Page Template">
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+<link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,500,600,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/animate.css">
+<!-- Resource style -->
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link rel="stylesheet" href="css/owl.theme.css">
+<link rel="stylesheet" href="css/ionicons.min.css">
+<link href="https://fonts.googleapis.com/css?family=Amiri|Changa|Markazi+Text|Mirza|Tajawal" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+<!-- Resource style -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<script>
+    function openTab(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+        document.getElementById('results').innerHTML ='';
+    }
+
+    openTab(event,'signin');
+</script>
+         
+
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBO7PHPc6DZhjENcv8rE48IBSKSndtDO5I",
+    authDomain: "tayssirkit.firebaseapp.com",
+    databaseURL: "https://tayssirkit.firebaseio.com",
+    projectId: "tayssirkit",
+    storageBucket: "tayssirkit.appspot.com",
+    messagingSenderId: "291014533788"
+  };
+  firebase.initializeApp(config);
+  const auth = firebase.auth();
+
+
+  firebase.auth().onAuthStateChanged(user=>{ 
+  if(user){
+    document.getElementById("btnLogOut").classList.remove('hide')
+  } else{
+    document.getElementById("btnLogOut").classList.add('hide')
+  }
+})
+
+$( document ).ready(function() {
+    openTab(event, "signin"); 
+});
+
+</script>
+
+<body>
+<div class="wrapper">
+  <div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container"> 
+        <!-- Brand and toggle get grouped for better mobile display -->
+       
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        
+         
+        </div>
+        <ul class="nav navbar-nav" style="
+        margin-left: 50px;">
+             <li><a class="page-scroll" href="#main">كيف استخدم ؟  </a></li>
+            <li><a class="page-scroll" href="#main">ابحث عن حاج  </a></li>
+            <li><a class="page-scroll" href="#main">الصفحة الرئيسية </a></li>
+          </ul>
+          
+          <ul class="nav navbar-nav navbar-right" DIR="rtl" style="margin-right : 100px;">
+            <li class="">
+              <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <img src="images/hajj.png" class='img-circle profile_img' alt="" style="width: 20%">سفيان
+                <span class=" fa fa-angle-down"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-usermenu pull-right">
+                <li><a href="help.php">مساعدة</a></li>
+                <li><a href="Login.php"><i class="fa fa-sign-out pull-right"></i> تسجيل الخروج</a></li>
+              </ul>
+            </li>
+          </ul>
+    </nav>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid -->
+  
+  <div class="main app form" id="main"><!-- Main Section-->
+   
+
+
+		<section class="content">
+	
+			<div class="col-md-8 col-md-offset-2" style="margin-top:150px;">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="pull-right">
+							<div class="btn-group">
+								<button type="button" class="btn btn-success btn-filter" data-target="pagado">Highly recommended</button>
+								<button type="button" class="btn btn-warning btn-filter" data-target="pendiente">Recommended</button>
+							</div>
+						</div>
+						<div class="table-container">
+							<table class="table table-filter">
+								<tbody>
+									<tr data-status="pagado">
+										<td>
+											
+										</td>
+										<td>
+										
+										</td>
+										<td>
+											<div class="media">
+												<a href="#" class="pull-left">
+													<img src="./images/sasa.jpg" width="100" class="media-photo">
+												</a>
+												<div class="media-body">
+													<span class="media-meta pull-right">Febrero 13, 2016</span>
+													<h4 class="title">
+														Lorem Impsum
+												
+													</h4>
+													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr data-status="pendiente">
+										<td>
+											
+										</td>
+										<td>
+											
+										</td>
+										<td>
+											<div class="media">
+												<a href="#" class="pull-left">
+													<img src="./images/sasa.jpg"  width ="100" class="media-photo">
+												</a>
+												<div class="media-body">
+													<span class="media-meta pull-right">Febrero 13, 2016</span>
+													<h4 class="title">
+														Lorem Impsum
+												
+													</h4>
+													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr data-status="cancelado">
+										<td>
+									
+										</td>
+										<td>
+										
+										</td>
+										<td>
+											<div class="media">
+												<a href="#" class="pull-left">
+													<img src="./images/sasa.jpg" width="100" class="media-photo">
+												</a>
+												<div class="media-body">
+													<span class="media-meta pull-right">Febrero 13, 2016</span>
+													<h4 class="title">
+														Lorem Impsum
+												
+													</h4>
+													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
+												</div>
+											</div>
+										</td>
+									</tr>
+								
+			</div>
+		</section>
+
+    
+  </div>
+  <!-- Main Section --> 
+</div>
+<!-- Wrapper--> 
+
+<!-- Jquery and Js Plugins --> 
+<script type="text/javascript" src="js/jquery-2.1.1.js"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="js/plugins.js"></script> 
+<script type="text/javascript" src="js/menu.js"></script> 
+<script type="text/javascript" src="js/custom.js"></script>
+<script src="js/jquery.subscribe.js"></script> 
+</body>
+</html>

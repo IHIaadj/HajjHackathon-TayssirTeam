@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>iLand Multipurpose Landing Page Template</title>
+<link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="iLand Multipurpose Landing Page Template">
+<meta name="keywords" content="iLand HTML Template, iLand Landing Page, Landing Page Template">
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+<link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,500,600,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/animate.css">
+<!-- Resource style -->
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link rel="stylesheet" href="css/owl.theme.css">
+<link rel="stylesheet" href="css/ionicons.min.css">
+<link href="https://fonts.googleapis.com/css?family=Amiri|Changa|Markazi+Text|Mirza|Tajawal" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+<!-- Resource style -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<script>
+    function openTab(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+        document.getElementById('results').innerHTML ='';
+    }
+
+    openTab(event,'signin');
+</script>
+         
+
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBO7PHPc6DZhjENcv8rE48IBSKSndtDO5I",
+    authDomain: "tayssirkit.firebaseapp.com",
+    databaseURL: "https://tayssirkit.firebaseio.com",
+    projectId: "tayssirkit",
+    storageBucket: "tayssirkit.appspot.com",
+    messagingSenderId: "291014533788"
+  };
+  firebase.initializeApp(config);
+  const auth = firebase.auth();
+
+
+  firebase.auth().onAuthStateChanged(user=>{ 
+  if(user){
+    document.getElementById("btnLogOut").classList.remove('hide')
+  } else{
+    document.getElementById("btnLogOut").classList.add('hide')
+  }
+})
+
+$( document ).ready(function() {
+    openTab(event, "signin"); 
+});
+
+</script>
+
+<body>
+<div class="wrapper">
+  <div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container"> 
+        <!-- Brand and toggle get grouped for better mobile display -->
+       
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a class="navbar-brand page-scroll" href="#main"><img src="images/logo.png" width="200" height="70" alt="iLand" /></a> </div>
+          </div>
+         
+        </div>
+        <ul class="nav navbar-nav" style="margin-top: -40px;
+        margin-left: 50px;">
+            <li><a class="page-scroll" href="#main" style="font-size:30px;margin-left:50px;">لنحج معا </a></li>
+          </ul>
+       
+    </nav>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid -->
+  
+  <div class="main app form" id="main"><!-- Main Section-->
+    <div class="hero-section">
+      <div class="container nopadding">
+        <div class="col-md-5"> <img class="img-responsive wow fadeInUp" data-wow-delay="0.1s" src="images/logoapp.png" alt="App" /> </div>
+        <div class="col-md-7">
+          <div class="hero-content" style="width:500px; padding-top:0px">
+              <div class="tab">
+                  <button class="tablinks" onclick="openTab(event, 'signin')">تسجيل الدخول </button>
+                  <button class="tablinks" onclick="openTab(event, 'signup')">تسجيل </button>
+                </div>
+                
+                <!-- Tab content -->
+                <div id="signin" class="tabcontent" style="height:200px;">
+                    <div class="input-group input-group-icon"  style="float:right;"  >
+                        <input type="email"  id="email" DIR="rtl"  placeholder="البريد الإلكتروني "/>
+                        <div class="input-icon"><i class="fa fa-envelope"></i></div>
+                    </div>
+                    <div class="input-group input-group-icon"  style="float:right;" >
+                        <input type="password" id="pass"  DIR="rtl" placeholder="كلمة السر" style="float: right;
+                        margin-top: 10px;
+                        margin-right: 0px;
+                        margin-left: 100px;"/>
+                        <div class="input-icon"><i class="fa fa-key"></i></div>
+                    </div>
+            
+                        <button class="btn-success" style="background-color:#21af87;
+                        margin-right: 170px; float:right;" id="btnLogin" onclick="  const email = document.getElementById('email').value;
+                        const pass = document.getElementById('pass').value;
+                        const promise = firebase.auth().signInWithEmailAndPassword(email, pass);
+                        promise.catch(e=>{ console.log(e.massage); document.getElementById('results').innerHTML =e.message;}); 
+                        document.location.href='C:/Users/Haadj/Desktop/iland-multipurpose-landing-page-html-template=y0002016mnovd2400000019/dashboard.html';"style="
+                        margin-left: 200px;margin-right: 0;  " >تسجيل الدخول</button>
+
+                        <button id="btnLogOut" class="hide" onclick="document.getElementById('btnLogOut').addEventListener('click', e=>{
+                            firebase.auth().signOut();
+                            console.log('logged out')
+                          })" style="display:none;">Log Out</button>
+                </div>
+                <div id="results"></div>
+                
+                <div id="signup" class="tabcontent" style="height:250px;">
+                    <div id="app">
+                       <p DIR="rtl"> تواصل مع الحجاج وتعرف مع من ستلاقي البقاع المقدسة 
+                        </p>
+                        <div class="input-group input-group-icon"  style="float:right;"  >
+                            <input type="email"  id="txtEmail" DIR="rtl"  placeholder="البريد الإلكتروني "/>
+                            <div class="input-icon"><i class="fa fa-envelope"></i></div>
+                        </div>
+                        <div class="input-group input-group-icon"  style="float:right;" >
+                            <input type="password" id="txtPassword"  DIR="rtl" placeholder="كلمة السر" style="float: right;
+                            margin-top: 10px;
+                            margin-right: 0px;
+                            margin-left: 100px;"/>
+                            <div class="input-icon"><i class="fa fa-key"></i></div>
+                        </div>
+                        <button  class="btn-success" style="background-color:#21af87;float: right;
+                        margin-top: 90px;
+                        margin-right: -150px; " id="btnSignUp"  onclick="const email = document.getElementById('txtEmail').value;
+                        const pass = document.getElementById('txtPassword').value;
+                        var t = 1 ; 
+                        firebase.auth().createUserWithEmailAndPassword(email, pass).catch(function(error) {
+                          t = 0;
+                         console.log(email);
+                         document.getElementById('results').innerHTML =error.message; 
+                          
+                        });
+                        if (t == 1 ){
+                          document.location.href='http://google.com';
+                        }
+                       ">التسجيل</button>
+                      
+                        
+                    </div>  
+                    <div id="results"></div>
+                </div>
+                
+          
+      
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- Footer Section -->
+    <div class="footer" style="background-color: #676867">
+      <div class="container">
+        <div class="col-md-7"> <img src="images/logo.png" width="80" height="30" alt="Image" />
+          <p> Lorem ipsum dolor sit. Incidunt laborum beatae earum nihil odio consequatur officiis
+tempore consequuntur officia ducimus unde doloribus quod unt repell  </p>
+      
+        </div>
+        <div class="col-md-5">
+            <h1>Contact Us</h1>
+            <p> Contact our 24/7 customer support if you have any <br class="hidden-xs">
+              questions. We'll help you out. </p>
+            <a href="mailto:support@gmail.com">contact@iland.com</a> </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scroll To Top --> 
+    
+    <a id="back-top" class="back-to-top page-scroll" href="#main"> <i class="ion-ios-arrow-thin-up"></i> </a> 
+    
+    <!-- Scroll To Top Ends--> 
+    
+  </div>
+  <!-- Main Section --> 
+</div>
+<!-- Wrapper--> 
+
+<!-- Jquery and Js Plugins --> 
+<script type="text/javascript" src="js/jquery-2.1.1.js"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="js/plugins.js"></script> 
+<script type="text/javascript" src="js/menu.js"></script> 
+<script type="text/javascript" src="js/custom.js"></script>
+<script src="js/jquery.subscribe.js"></script> 
+</body>
+</html>
