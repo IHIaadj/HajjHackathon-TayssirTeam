@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReportProblemMainActivity"
+    android:background="#E5E3E2"
+    android:orientation="vertical">
+
+
+
+    <com.github.florent37.arclayout.ArcLayout
+        android:id="@+id/arctoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:elevation="10dp"
+        app:arc_cropDirection="cropInside"
+        app:arc_height="5dp"
+        app:arc_position="bottom">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary">
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="100dp"
+                android:layout_height="53dp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@id/back"
+                app:srcCompat="@drawable/tayssirkit" />
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="41dp"
+                android:layout_height="53dp"
+                app:srcCompat="?attr/actionModeCloseDrawable" />
+
+        </RelativeLayout>
+
+    </com.github.florent37.arclayout.ArcLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:textColorHint="@color/colorAccent">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/name_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="الإسم الكامل"
+            android:inputType="text"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:textColorHint="@color/colorAccent">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:hint="وصف المشكلة"
+            android:id="@+id/description_edit_text"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:padding="12dp"
+        android:text="إرسال"
+        android:gravity="center_horizontal"/>
+
+
+
+
+</LinearLayout>
