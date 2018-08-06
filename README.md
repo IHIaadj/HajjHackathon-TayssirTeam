@@ -35,8 +35,7 @@ Problem report Dashboard
 
 1. **A web application** using tensorflow.js to build a recommendation system capable of listing a couple of persons 
 
-![Diagram]
-(https://image.noelshack.com/fichiers/2018/31/5/1533251978-user.jpg)
+![Diagram](https://image.noelshack.com/fichiers/2018/31/5/1533251978-user.jpg)
 
 2. **Mobile Android Application** using Java and some APIs like Google Maps
 
