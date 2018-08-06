@@ -1,6 +1,7 @@
 # HajjHackathon-TayssirTeam
 Tayssir Kit is a set of innovative utilities that helps the pilgrim through the hajj process. 
 ![logo](https://image.noelshack.com/fichiers/2018/32/1/1533545112-logo.png)
+
 Check demo : https://ihiaadj.github.io/HajjHackathon-TayssirTeam/
 ## Inspiration
 Two years ago, my grandmother finally had the chance to go to hajj. Unfortunately, none of her children could go with her because of financial issues, although she needs someone to guide her because she’s illitrate in one hand and can’t talk any other language except the algerian dialect. We searched for someone who could accompany her and it was a really difficult process. We finally found an adorable person who guided my grandmother through all the hajj steps without exception. That year we discovered the power of solidarity, kindness and brotherhood in muslims communities, and my grandmother finally achieved her dream, the fifth pillar of Islam, safely. 
@@ -10,7 +11,9 @@ Each year, Saudi Arabia hosts approximately two millions pilgrims to the city of
 To avoid these issues and improve other aspects of hajj experience we created Tayssir Kit ! 
 
 ## What it does
+
 ![Diagram](https://image.noelshack.com/fichiers/2018/32/1/1533545144-gallery.jpg)
+
 Tayssir Kit is a set of innovative utilities to help provide the best hajj experience for pelgrims. Our main application is : 
 
 **Let’s Hajj together** : Connect between great people who wants to help and people who needs accompanist to do pilgrimage. The application recommends profiles using a recommendation system which finds the right person to go with by using their location, date of flight, gender, age. 
